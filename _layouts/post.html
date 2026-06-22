@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article>
+  <header class="post-header">
+    <div class="section-title">&raquo; BLOG.LOG -- {{ page.date | date: "%Y-%m-%d" }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      Posted on {{ page.date | date: "%B %d, %Y" }}
+      {% if page.tags %} &nbsp;|&nbsp; Tags: {{ page.tags | join: ", " }}{% endif %}
+    </div>
+  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
+  <a class="back-link" href="{{ '/blog/' | relative_url }}">&larr; Back to BLOG.LOG</a>
+</article>

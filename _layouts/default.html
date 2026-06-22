@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} -- {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+  {% include person-schema.html %}
+</head>
+<body>
+  <div id="boot-screen">
+    <div class="boot-line">Checking RAM................... 640K OK</div>
+    <div class="boot-line">Loading PORTFOLIO.SYS.......... DONE</div>
+    <div class="boot-line">Initializing personality module. DONE</div>
+    <div class="boot-line">*** FATAL EXCEPTION 0E ***</div>
+    <div class="boot-line">Dumping portfolio to screen...</div>
+    <div class="boot-line">Press any key to continue (or don't, whatever)</div>
+  </div>
+
+  <div class="site-wrapper">
+    <header>
+      <div class="top-bar">Windows -- Fatal Exception -- Portfolio</div>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}">ABOUT.EXE</a>
+        <a href="{{ '/projects/' | relative_url }}">PROJECTS.DLL</a>
+        <a href="{{ '/experience/' | relative_url }}">WORK.SYS</a>
+        <a href="{{ '/blog/' | relative_url }}">BLOG.LOG</a>
+        <a href="{{ '/contact/' | relative_url }}">CONTACT.INI</a>
+      </nav>
+      <hr class="divider">
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <hr class="divider">
+      Press <strong>TAB</strong> to navigate &nbsp;|&nbsp;
+      <span class="footer-blink">&#x2588;</span> cursor active &nbsp;|&nbsp;
+      {{ site.author.name }} &copy; {{ 'now' | date: "%Y" }}
+      <div class="footer-progress">
+        Portfolio loaded: ████████████████████ 100% -- No errors found (that IS the error)
+      </div>
+    </footer>
+  </div>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+<div class="section-title">&raquo; CONTACT.INI -- System Configuration</div>
+
+<p class="ini-comment">; Submit a system request below</p>
+<p class="ini-comment">[SEND_MESSAGE]</p>
+
+<form action="https://api.web3forms.com/submit" method="POST" class="bsod-form">
+  <input type="hidden" name="access_key" value="fd75cc81-c9af-4d63-a38b-fb6c41c54904">
+  <input type="hidden" name="subject" value="New message from xandra.me">
+  <input type="hidden" name="redirect" value="https://www.xandra.me//contact/?success=true">
+
+  <div class="form-row">
+    <label for="name">NAME=</label>
+    <input type="text" id="name" name="name" required placeholder="your name">
+  </div>
+
+  <div class="form-row">
+    <label for="email">EMAIL=</label>
+    <input type="email" id="email" name="email" required placeholder="your@email.com">
+  </div>
+
+  <div class="form-row form-row--textarea">
+    <label for="message">MESSAGE=</label>
+    <textarea id="message" name="message" required rows="5" placeholder="type here..."></textarea>
+  </div>
+
+  {% if page.url contains 'success=true' %}
+  <p class="form-success">» TRANSMISSION SUCCESSFUL. Will respond within 24h.</p>
+  {% endif %}
+
+  <button type="submit" class="form-submit">[ SEND TRANSMISSION ]</button>
+</form>
+
+<hr class="divider">
+
+<p class="ini-comment">[NETWORK_INTERFACES]</p>
+
+<div class="contact-grid">
+  <div class="contact-row">
+    <span class="contact-key">GITHUB=</span>
+    <a class="contact-val" href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>
+  </div>
+  <div class="contact-row">
+    <span class="contact-key">BEHANCE=</span>
+    <a class="contact-val" href="https://behance.net/{{ site.author.behance }}">behance.net/{{ site.author.behance }}</a>
+  </div>
+  <div class="contact-row">
+    <span class="contact-key">LINKEDIN=</span>
+    <a class="contact-val" href="https://linkedin.com/in/{{ site.author.linkedin }}">linkedin.com/in/{{ site.author.linkedin }}</a>
+  </div>
+  <div class="contact-row">
+    <span class="contact-key">INSTAGRAM=</span>
+    <a class="contact-val" href="https://instagram.com/{{ site.author.instagram }}">@{{ site.author.instagram }}</a>
+  </div>
+</div>

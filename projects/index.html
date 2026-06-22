@@ -1,0 +1,29 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<div class="section-title">&raquo; PROJECTS.DLL -- Loaded Modules</div>
+
+<div class="projects-grid">
+  {% assign sorted = site.projects | sort: 'date' | reverse %}
+  {% for project in sorted %}
+  <div class="project-card">
+    <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+    {% if project.stack %}
+    <div class="project-stack">{{ project.stack | join: " &middot; " }}</div>
+    {% endif %}
+    <p>{{ project.description }}</p>
+
+    <div class="project-links">
+      {% if project.behance %}
+        <a href="{{ project.behance }}" target="_blank">Behance &rarr;</a>
+      {% else %}
+        <a href="{{ project.url | relative_url }}">Details &rarr;</a>
+      {% endif %}
+      {% if project.github %}<a href="{{ project.github }}" target="_blank">GitHub &rarr;</a>{% endif %}
+      {% if project.demo %}<a href="{{ project.demo }}" target="_blank">Live Demo &rarr;</a>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

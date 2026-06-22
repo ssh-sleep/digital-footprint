@@ -1,0 +1,47 @@
+title: "Xandra Holazo Marfori"
+description: "Visual Designer | Systems Architect | Problem Crasher - Portfolio"
+url: "http://localhost:4010/"
+baseurl: ""
+
+author:
+  name: Xandra Holazo Marfori
+  email: 
+  github: 
+  linkedin: angelaalexandraholazomarfori
+  instagram: i_m.xandra
+  behance: tar_xz_cozy
+  location: Davao City, Philippines
+  tagline: Visual Designer / Systems Architect / Problem Crasher
+  bio: >
+    I build things for the web or for paper and occasionally cause controlled crashes in production.
+    I care about clean code, good design, interesting problems, and interfaces that don't need a manual.
+
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
