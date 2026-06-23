@@ -41,6 +41,12 @@ defaults:
     values:
       layout: "project"
 
+
+url: "https://www.xandra.me"
+plugins:
+  - jekyll-sitemap
+
+
 exclude:
   - Gemfile
   - Gemfile.lock
